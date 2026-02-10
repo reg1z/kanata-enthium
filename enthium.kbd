@@ -25,11 +25,11 @@
 )
 
 ;; Flowtap home row mod template
-;; Streak detected → pure tap; otherwise tap-hold-release-timeout
+;; Streak detected → pure tap; otherwise tap-hold
 (deftemplate hrm (char mod hold-time streak-time)
   (switch
     ((key-timing $streak-count less-than $streak-time)) $char break
-    () (tap-hold-release-timeout $tap-time $hold-time $char $mod $char) break
+    () (tap-hold $tap-time $hold-time $char $mod) break
   )
 )
 
@@ -38,7 +38,7 @@
 (deftemplate streaktap (char layer hold-time streak-time)
   (switch
     ((key-timing $streak-count less-than $streak-time)) $char break
-    () (tap-hold-release-timeout $tap-time $hold-time $char (layer-while-held $layer) $char) break
+    () (tap-hold $tap-time $hold-time $char (layer-while-held $layer)) break
   )
 )
 
