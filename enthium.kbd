@@ -71,6 +71,7 @@
 ;; Spacebar: streak-protected workspaces layer hold
 (defalias
   spc (t! streaktap spc workspaces $thumb-hold $thumb-streak)
+  spc-ml (t! streaktap spc workspaces-moonlight $thumb-hold $thumb-streak)
 )
 
 ;; Enthium10 alt keys: streak-protected layer holds
@@ -149,7 +150,7 @@
   tab  z    y    o    u    /    q    l    d    p    x    lalt ralt \
   '    @ml-a @ml-s @en-d @en-f ,   k    @en-j @en-k @ml-l @ml-; v  ret
   lsft w    -    =    .    ;    j    m    g    b    f    rsft
-  lctl lmet @en-lalt       @spc           @en-ralt rmet rmet rctl
+  lctl lmet @en-lalt       @spc-ml        @en-ralt rmet rmet rctl
   up   down left rght
 )
 
@@ -180,6 +181,16 @@
   _    _    M-7  M-8  M-9  _    _    _    _    _    _    _    _    _
   _    _    M-4  M-5  M-6  _    _    _    _    _    _    _    _    _
   _    _    M-1  M-2  M-3  _    _    left down up   rght _    _
+  _    _    _    _    _    _    _    home pgdn pgup end  _
+  _    _    _              _              _    _    prnt _
+  @to-moonlight @to-enthium @to-qwerty @to-miryoku
+)
+
+;; Workspaces layer for Moonlight — AltGr replaces Super for workspace switching
+(deflayer workspaces-moonlight
+  _    _    AG-7 AG-8 AG-9 _    _    _    _    _    _    _    _    _
+  _    _    AG-4 AG-5 AG-6 _    _    _    _    _    _    _    _    _
+  _    _    AG-1 AG-2 AG-3 _    _    left down up   rght _    _
   _    _    _    _    _    _    _    home pgdn pgup end  _
   _    _    _              _              _    _    prnt _
   @to-moonlight @to-enthium @to-qwerty @to-miryoku
