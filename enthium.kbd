@@ -84,11 +84,20 @@
   sym (layer-while-held symbol)
 )
 
+;; Enthium-moonlight home row mods (ralt replaces super, lalt on both rings)
+(defalias
+  ml-a (t! hrm c ralt $pinky-hold $pinky-streak)
+  ml-s (t! hrm i lalt $ring-hold $ring-streak)
+  ml-l (t! hrm n lalt $ring-hold $ring-streak)
+  ml-; (t! hrm s ralt $pinky-hold $pinky-streak)
+)
+
 ;; Layout switching
 (defalias
-  to-qwerty  (layer-switch qwerty)
-  to-miryoku (layer-switch miryoku-qwerty)
-  to-enthium (layer-switch enthium10)
+  to-qwerty    (layer-switch qwerty)
+  to-miryoku   (layer-switch miryoku-qwerty)
+  to-enthium   (layer-switch enthium10)
+  to-moonlight (layer-switch enthium-moonlight)
 )
 
 ;; ─── Source (physical keyboard) ────────────────────────────────
@@ -134,6 +143,16 @@
   up   down left rght
 )
 
+;; Enthium v10 for Moonlight — ralt on pinkies (AltGr = Super), lalt on rings
+(deflayer enthium-moonlight
+  grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
+  tab  z    y    o    u    /    q    l    d    p    x    lalt ralt \
+  '    @ml-a @ml-s @en-d @en-f ,   k    @en-j @en-k @ml-l @ml-; v  ret
+  lsft w    -    =    .    ;    j    m    g    b    f    rsft
+  lctl lmet @en-lalt       @spc           @en-ralt rmet rmet rctl
+  up   down left rght
+)
+
 ;; ─── Overlay Layers ────────────────────────────────────────────
 
 ;; Symbol layer — left hand symbols, right hand editing
@@ -163,5 +182,5 @@
   _    _    M-1  M-2  M-3  _    _    left down up   rght _    _
   _    _    _    _    _    _    _    home pgdn pgup end  _
   _    _    _              _              _    _    prnt _
-  @to-enthium @to-enthium @to-qwerty @to-miryoku
+  @to-moonlight @to-enthium @to-qwerty @to-miryoku
 )
