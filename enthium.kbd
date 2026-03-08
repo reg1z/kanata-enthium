@@ -85,6 +85,12 @@
   sym (layer-while-held symbol)
 )
 
+;; Shift keys: tap = one-shot shift, hold = normal shift
+(defalias
+  os-lsft (tap-hold $tap-time 200 (one-shot 2000 lsft) lsft)
+  os-rsft (tap-hold $tap-time 200 (one-shot 2000 rsft) rsft)
+)
+
 ;; Enthium-moonlight home row mods (ralt replaces super, lalt on both rings)
 (defalias
   ml-a (t! hrm c ralt $pinky-hold $pinky-streak)
@@ -136,11 +142,11 @@
 
 ;; Enthium v10 with Miryoku home row mods
 (deflayer enthium10
-  grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
-  tab  z    y    o    u    /    q    l    d    p    x    lalt ralt \
+  grv  1    2    3    4    5    6    7    8    9    0    lalt ralt bspc
+  tab  z    y    o    u    /    q    l    d    p    x    [    ]    \
   '    @en-a @en-s @en-d @en-f ,   k    @en-j @en-k @en-l @en-; v  ret
-  lsft w    -    =    .    ;    j    m    g    b    f    rsft
-  lctl lmet @en-lalt       @spc           @en-ralt rmet rmet rctl
+  @os-lsft w    -    =    .    ;    j    m    g    b    f    @os-rsft
+  \    lmet @en-lalt       @spc           @en-ralt prtsc prtsc grv
   up   down left rght
 )
 
