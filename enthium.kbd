@@ -142,7 +142,7 @@
 
 ;; Enthium v10 with Miryoku home row mods
 (deflayer enthium10
-  grv  1    2    3    4    5    6    7    8    9    0    lalt ralt bspc
+  caps  1    2    3    4    5    6    7    8    9    0   lalt ralt bspc
   tab  z    y    o    u    /    q    l    d    p    x    [    ]    \
   '    @en-a @en-s @en-d @en-f ,   k    @en-j @en-k @en-l @en-; v  ret
   @os-lsft w    -    =    .    ;    j    m    g    b    f    @os-rsft
