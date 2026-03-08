@@ -6,3 +6,4 @@ fi
 
 cp -f enthium.kbd /etc/kanata/enthium.kbd
 
+systemctl restart --now kanata
